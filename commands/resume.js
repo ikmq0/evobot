@@ -10,7 +10,7 @@ module.exports = {
     if (!canModifyQueue(message.member)) return;
 
     if (!queue.playing) {
-      queue.playing = true;
+      queue.playing = false;
       queue.connection.dispatcher.resume();
       return queue.textChannel.send(`${message.author} ▶ resumed the music!`).catch(console.error);
     }
